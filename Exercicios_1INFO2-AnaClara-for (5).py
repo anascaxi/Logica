@@ -89,29 +89,61 @@ def dar_troco(valor_a_pagar, valor_em_dinheiro):
 
     ex:
     1 e 10 retorna troco_notas_quantidade = [5,2] quantidade_notas = [1,2]"""
-
+    notas = [50, 20, 10, 5, 2, 1]
+    troco = valor_em_dinheiro - valor_a_pagar
+    troco1 = []
+    for n in notas:
+        quant = troco // n
+        troco = troco % n
+        if quant != 0:
+            troco1.append((n, quant))
+    return troco1
 
 def media_anual(temperaturas):
     """Receba uma lista com as temperaturas médias de cada mês
     e devolva uma lista com os números correspondentes aos meses
     que possuem temperatura superior á média anual."""
-
+    meses_quentes = []
+    media = sum(temperaturas) / len(temperaturas)
+    for t, temp in enumerate(temperaturas):
+        if temp > media:
+            meses_quentes.append(t)
+    return meses_quentes
 
 def maiores_13(idades, alturas):
     """Esta função recebe as idades e alturas de diversas pessoas, em duas
     listas separadas e de igual comprimento.
     Calcule a media das alturas e retorne as alturas daqueles que
     possuem 'idades' maior que 13 e altura inferior a media da turma"""
-
+    media_alt = sum(alturas) / len(alturas)
+    abaixo = []
+    for a, b in enumerate(idades):
+        if b > 13:
+            c = alturas[a]
+            if c < media_alt:
+                abaixo.append(c)
+    return abaixo
 
 def testa_primo(valor):
     """Recebe um valor e verifica se ele é um número primo ou não."""
+    if valor == 2:
+        return True
+    elif valor in (0,1) or valor % 2 == 0:
+        return False
+    for i in range(2, valor):
+        if valor % i == 0:
+            return False
+    return True
 
 
 def lista_de_primos(inicio, fim):
     """Retorne uma lista de primos entre os valores informados, incluindo
     os limites"""
-
+    lista = []
+    for i in range(inicio, fim + 1):
+        if testa_primo(i):
+            lista.append(i)
+    return lista
 
 def Fibonacci(n):
     """ Retorne uma lista com os n primeiros valores da série de Fibonacci.
@@ -127,6 +159,26 @@ def altera_salarios(salarios):
     Salário mínimo para referência: R$ 724,00
     Retorna a lista com os salários alterados
     """
+    salarios_alterados = []
+    salmin = 724
+    for i in salarios:
+        if i <= salmin:
+            au = i * 0.2
+            salfim = i + au
+            salarios_alterados.append(salfim)
+        elif i > salmin and i <= (2 * salmin):
+            auu = i * 0.15
+            salfi = i + auu
+            salarios_alterados.append(salfi)
+        elif i > (2 * salmin) and i <= (5 * salmin):
+            auuu = i * 0.1
+            salf = i + auuu
+            salarios_alterados.append(salf)
+        else:
+            a = i * 0.05
+            sal = i + a
+            salarios_alterados.append(sal)
+    return salarios_alterados
 
 
 # Área de testes: só mexa aqui se souber o que está fazendo!
