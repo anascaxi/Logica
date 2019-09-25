@@ -81,7 +81,22 @@ def im_pares(lista):
 
 def maior_menor(lista):
     """ Calcule o maior e o menor numero da 'lista' """
-
+    menor = 0
+    maior = 1
+    for i in lista:
+        if i < 0:
+            maior = -1
+            menor = -1
+        else:
+            maior = 0
+            menor = 1
+    for i in lista:
+        if i > maior:
+            maior = i
+        elif i < menor:
+            menor = i
+    return (maior, menor)
+        
 
 def dar_troco(valor_a_pagar, valor_em_dinheiro):
     """ Calcule o troco numa lista com notas de 1,2,5,10,20,50 com sua
@@ -148,7 +163,15 @@ def lista_de_primos(inicio, fim):
 def Fibonacci(n):
     """ Retorne uma lista com os n primeiros valores da série de Fibonacci.
     Fibonacci = 1,1,2,3,5,8,13,..."""
-
+    ant_1 = 1
+    ant_2 = 0
+    fib = []
+    for i in range(n):
+        soma = ant_1 + ant_2
+        ant_1 = ant_2
+        ant_2 = soma
+        fib.append(soma)
+    return fib
 
 def altera_salarios(salarios):
     """ Calcule o aumento de salário de acordo com a seguinte tabela:
