@@ -18,15 +18,15 @@ def soma_dos_inteiros(valor1, valor2):
     e o 'valor2' ou vice-versa, considerando que podem ser informado
     números negativos ou fora de ordem. 
     Ex: 1 e 5 ou 5 e 1, retorna 9'''
-    if valor1 < valor2:
-        valor1 = valor2
-        valor2 = valor1
+    if valor1 > valor2:
+        valour1 = valor2
+        valour2 = valor1
     else:
-        valor1 = valor1
-        valor2 = valor2
+        valour1 = valor1
+        valour2 = valor2
     soma = 0
-    num = valor1
-    while num < valor2:
+    num = valour1 + 1
+    while num < valour2:
             soma += num
             num += 1
     return soma
@@ -34,38 +34,94 @@ def soma_dos_inteiros(valor1, valor2):
 def potencia(base, expoente):
     ''' Calcule a 'base' elevada ao 'expoente' manualmente sem usar 
     'base**expoente'. Considere base e expoente como inteiros positivos.'''
-
+    if expoente == 0:
+        return 1
+    cont = 1
+    num = base
+    while cont < expoente:
+        num = num * base
+        cont += 1
+    return num
 
 def crescimento_populacional(populacao1, populacao2, crescimento1,
                              crescimento2):
     ''' Calcule quantos anos levará para a 'população1' ultrapassar a 
     'população2', baseado em suas porcentagens de crescimento.'''
+    if populacao1 > populacao2:
+        return 0
+    if crescimento1 < crescimento2:
+        return 0
+    anos = 0
+    while populacao1 < populacao2:
+        pop1 = populacao1 * (crescimento1/100)
+        populacao1 += pop1
+        pop2 = populacao2 * (crescimento2/100)
+        populacao2 += pop2
+        anos += 1
+    return anos
 
 
 def Fibonacci(n):
     ''' Retorne o n-ésimo valor da série de Fibonacci
     Fibonacci = 1,1,2,3,5,8,13,...'''
+    ant_1 = 1
+    ant_2 = 0
+    cont = 0
+    while cont < n:
+        soma = ant_1 + ant_2
+        ant_1 = ant_2
+        ant_2 = soma
+        cont += 1
+    return soma
 
 
 def fatorial(numero):
     ''' Calcule e retorne o fatorial do 'numero' informado,
     O fatorial é o valor produtório dos valores menores ou iguais ao número
     ex: fatorial de 4 é 4*3*2*1 e retorna 24'''
-
+    if numero == 0:
+        return 1
+    num_inicial = numero - 1
+    fato = numero
+    while num_inicial > 0:
+        fato = fato * num_inicial 
+        num_inicial = num_inicial - 1
+    return fato
 
 def é_primo(valor):
     ''' Verifique se o 'valor' informado é primo.
     Um número primo é aquele que é divisível apenas por ele mesmo e por 1'''
-
+    if valor == 2:
+        return True
+    elif valor in (0,1) or valor % 2 == 0:
+        return False
+    for i in range(2, valor):
+        if valor % i == 0:
+            return False
+    return True
 
 def quantidade_de_primos(comeco, final):
     ''' Retorne a quantidade de primos entre os valores informados'''
-
+    contador_de_primos = 0
+    n = comeco + 1
+    while n < final:
+        if é_primo(n):
+            contador_de_primos += 1
+        n += 1
+    return contador_de_primos
+    
 
 def lista_de_primos(inicio, fim):
     '''Retorne uma lista de primos entre os valores informados, incluindo
     os limites'''
-
+    iniciou = inicio 
+    finalizou = fim + 1
+    lista_de_primoss = []
+    while iniciou < finalizou:
+        if é_primo(iniciou):
+            lista_de_primoss.append(iniciou)
+        iniciou += 1
+    return lista_de_primoss
 
 def serie1(n):
     '''Dado n, calcule o valor de
