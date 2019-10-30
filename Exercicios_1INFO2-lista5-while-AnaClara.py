@@ -126,18 +126,45 @@ def lista_de_primos(inicio, fim):
 def serie1(n):
     '''Dado n, calcule o valor de
     s = 1 + 1/2 + 1/3 + 1/4 + ... + 1/n '''
-
+    num = 0
+    divisor = 1
+    while divisor <= n:
+        num += 1/divisor
+        divisor += 1
+    return round(num,2)
 
 def serie2(n):
     '''Dado n, calcule o valor de
     s = 1/1 + 2/3 + 3/5 + 4/7 + 5/9 + ... + n/m'''
+    num = 0
+    divisor_de_cima = 1
+    divisor_c_soma_dois = 1
+    o_q_conta_o_numero_n = 1
+    while o_q_conta_o_numero_n <= n:
+        num += divisor_de_cima / divisor_c_soma_dois
+        divisor_de_cima += 1
+        divisor_c_soma_dois += 2
+        o_q_conta_o_numero_n +=1
+    return round(num,2)
 
 
 def serie_pi(n):
     ''' Calcule o valor de pi através da série
     4/1 - 4/3 + 4/5 - 4/7 + ... - 4/m, sendo informado
     o número n de iterações '''
-
+    contador = 1
+    m = 0
+    divison = 1
+    nao_sei= 1
+    while contador <= n:
+        if nao_sei % 2 == 0:
+            m -= 4/divison
+        else:
+            m += 4/divison
+        divison += 2
+        nao_sei += 1
+        contador += 1
+    return round(m,6)
 
 # Área de testes: só mexa aqui se souber o que está fazendo!
 acertos = 0
