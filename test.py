@@ -60,7 +60,11 @@ def testa_cpf_dnovo(cpf):
         u = pra_separar_os_nums[6] * 4
         l = pra_separar_os_nums[7] * 3
         m = pra_separar_os_nums[8] * 2
-        aninha = (q + w + e + r + t + y + u + l + m) *
+        aninha = (q + w + e + r + t + y + u + l + m) * 10
+        if aninha % 11 == k[9]:
+            return True
+        else:
+            return False
 
 
 
@@ -77,6 +81,10 @@ class MyTest(unittest.TestCase):
     def test(self):
         self.assertEqual(testa_cpf_finalmente('116793229-32'), False)
         self.assertEqual(testa_cpf_finalmente('116794009-16'), True)
+
+    def test(self):
+        self.assertEqual(testa_cpf_dnovo('116793229-32'), False)
+        self.assertEqual(testa_cpf_dnovo('116794009-16'), True)
         
 if __name__ == '__main__':
     unittest.main()
