@@ -1,0 +1,38 @@
+body{
+    background: linear-gradient(to right, rgb(0, 60, 0), rgb(169,236,163));
+    height: 100vh;
+    color: #ffffff;
+    font-family: 'Montserrat', 'sans-serif';
+}
+#quiz {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#quiz h1{
+    font-weight: 600;
+    font-size: 4rem;
+}
+
+.question {
+    background-color: snow;
+    color: #000;
+    font-size: 2.5rem;
+    height: 400px;
+    width: 70%;
+}
+
+ul.answers{
+    font-size: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.answers li{
+    margin: 20px;
+    display: flex;
+    background-color: #89c454;
+    width: 40%;
+    align-self: center;
+}
