@@ -21,6 +21,7 @@ body{
     font-size: 2.5rem;
     height: 400px;
     width: 70%;
+    border-radius: 12px;
 }
 
 ul.answers{
@@ -35,4 +36,19 @@ ul.answers{
     background-color: #89c454;
     width: 40%;
     align-self: center;
+    border-radius: 8px;
+}
+
+.answers .number{
+    background-color: darkgreen;
+    color: #ffffff;
+    padding: 10px;
+    border-top-left-radius:  10px;
+    border-bottom-left-radius: 10px;
+    flex-basis: 30px;
+}
+
+.answers .test {
+    align-self: center;
+    flex: 1;
 }
