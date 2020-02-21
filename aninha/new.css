@@ -1,11 +1,8 @@
 p.one {
     border-style: solid;
     border-width: 3px;
-    border-h
     font-family: "Helvetica", sans-serif;
     font-size: 11px;
     text-align: center;    
     line-height: 20px;
-    color: blue;
-
 }
