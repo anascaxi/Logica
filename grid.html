@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>oh pai amado</title>
+    <style>
+        html,
+        body{
+            margin: 15px;
+            background-color: aquamarine;
+            height: calc(100% - 30px);
+        }
+
+        div{
+            font-size: 20px;
+            border: solid 3px lightpink;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-columns: repeat(12, 8.33%);
+            grid-template-columns: 100px repeat(10, 5%) 150px;
+            grid-template-columns: 100px 1fr 150px;
+            grid-template-columns: 3fr 6fr 3fr;
+
+            grid-template-rows: 50% 25% 12.5% 12.5%;
+            grid-template-rows: 100px 1fr 2fr 15%;
+        }
+
+        .c4{
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-column-end: span 2;
+            grid-row-end: span 3;
+
+        }
+
+        .c6,
+        .c7 {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: span 2; 
+        }
+
+        .c6{
+            z-index: 20;
+        }
+
+        .c9{
+            /*linha-inicio coluna-inicio linha-fim coluna-fim
+            row-start column-start row-start row-end*/
+            grid-area: 5 / 2 / 7 / 4;
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div class="c4">4</div>
+    <div>5</div>
+    <div class="c6">6</div>
+    <div class="c7">7</div>
+    <div>8</div>
+    <div class="c9">9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+</body>
+</html>
