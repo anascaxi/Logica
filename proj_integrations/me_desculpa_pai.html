@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Funk Monstro</title>
+    <style>
+        body{
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 20% 60% 20%;
+            border: none;
+        }
+
+        header{
+            grid-column-start: span 2;
+            background-color: aquamarine;
+            text-align: center;
+            grid-row-start: 1;
+        }
+        
+        .menu{
+            background-color: beige;
+            text-align: center;
+            grid-row-start: 2;
+         
+        }
+
+        .contenido{
+            grid-column-start: 2;
+            text-align: center;
+            background-color: lightpink;
+            grid-row-start: 2;
+        }
+        footer{
+            background-color: aquamarine;
+            grid-row-start: 3;
+            grid-column-start: span 2;
+        }
+
+        .logo{
+            align-items: right;
+        }
+        .cont{
+            align-items: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1> Cabeçalho</h1>
+    </header>
+    <div class="menu">
+        <h1> Menu </h1>
+        <p> Texto 
+            <br> Texto
+            <br> Texto
+            <br> Texto
+        </p>
+    </div>
+    <div class="contenido">
+        <h1> Contenido</h1>
+    </div>
+    <footer>
+        <p class='logo'> Logo</p>
+        <p class='cont'> Contato</p>
+    </footer>
+</body>
+</html>
