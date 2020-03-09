@@ -11,12 +11,13 @@
             align-items: center;
             justify-content: center;
             grid-template-columns: 30% 70%;
-            grid-template-rows: 20% 60% 20%;
+            grid-template-rows: 100px 1fr 100px;
             border: none;
+            height: 100vh;
         }
 
         header{
-            grid-column-start: span 2;
+            grid-column-start: span 2 ;
             background-color: aquamarine;
             text-align: center;
             grid-row-start: 1;
@@ -30,11 +31,12 @@
         }
 
         .contenido{
-            grid-column-start: 2;
+           
             text-align: center;
             background-color: lightpink;
-            grid-row-start: 2;
+    
         }
+     
         footer{
             background-color: aquamarine;
             grid-row-start: 3;
@@ -42,11 +44,28 @@
         }
 
         .logo{
-            align-items: right;
+            grid-column-start: 1;
         }
         .cont{
-            align-items: left;
+            grid-column-start: 2;
         }
+        .sub-cont{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            height: 200px;
+        }
+        .sub-cont div{
+            border: 1px solid black;
+            background-color: white;
+            border-radius: 5px;
+            height: 40%;
+            width: 40%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
     </style>
 </head>
 <body>
@@ -63,6 +82,12 @@
     </div>
     <div class="contenido">
         <h1> Contenido</h1>
+        <div class="sub-cont">
+            <div>sub cont 1</div>
+            <div>sub cont 2</div>
+            <div>sub cont 3</div>
+            <div>sub cont 4</div>
+        </div>
     </div>
     <footer>
         <p class='logo'> Logo</p>
