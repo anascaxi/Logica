@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+        
+        body{
+            display: grid; 
+            grid-template-rows: 100px 1fr 100px;
+            grid-template-columns: 200px 1fr;
+            margin: 0;
+            height: 100vh;
+        }
+        
+        header{
+            background-color: lavender;
+            grid-area: 1 / 1 / 2 / 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav{
+            background-color: skyblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+        nav ul li{
+            display: flex;
+        }
+        main{
+            background-color: lightpink;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        article{
+            background-color: white;
+            border: 1px solid black; 
+            border-radius: 10px;
+            height: 40%;
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;  
+            margin: 10px; 
+        }
+
+        span{
+            font-weight: 600;
+            font-size: 30px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer{
+            background-color: cyan;
+            grid-area: 3 / 1 / 4 / 3;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+        }
+    </style>
+
+</head>
+<body>
+    <header>Cabeçalho</header>
+    <nav>
+        MENU 
+        <ul>
+            <li>Texto1</li>
+            <li>Texto2</li>
+            <li>Texto3</li>
+        </ul>
+    </nav>
+
+    <main>
+        <span>Conteudo</span>
+        <article>sub-conteudo1</article>
+        <article>sub-conteudo2</article>
+        <article>sub-conteudo3</article>
+        <article>sub-conteudo4</article>
+    </main>
+
+    <footer> 
+        <div class="logo">
+            Logo
+        </div>
+        <div class="contato">
+            Contato
+        </div>
+    </footer>
+</body>
+</html>
